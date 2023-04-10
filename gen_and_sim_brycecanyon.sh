@@ -15,10 +15,10 @@ root -l -b -q "input/gen_particles.cxx(\
 ${num_events},\
 \"${hepmcfile}\",\
 \"${particle}\",\
-${theta_min},\
-${theta_max},\
-${phi_min},\
-${phi_max},\
+${theta},\
+${theta},\
+0,\
+360,\
 ${beam_energy})"
 
 
@@ -31,14 +31,14 @@ mkdir -p "output"
 #Run 1
 echo "Running simulation !!!"
 #Simulation
-npsim --compactFile $DETECTOR_PATH/epic_brycecanyon.xml --numberOfEvents ${numevents} --inputFiles ${hepmcfile} --outputFile output.edm4hep.root | tee dd4hep_out.dat
+npsim --compactFile $DETECTOR_PATH/epic_brycecanyon.xml --numberOfEvents ${num_events} --inputFiles ${hepmcfile} --outputFile output.edm4hep.root | tee dd4hep_out.dat
 
 #ln -s output/output.gen_${particle}_1GeV_theta_2.83deg.edm4hep.root output.edm4hep.root
 
 #Reconstruction: Full output, scaled
 eicrecon \
 -Ppodio:output_file=eicrecon_out.root \
--Pjana:nevents=${numevents} \
+-Pjana:nevents=${num_events} \
 -Pdd4hep:xml_files=epic_brycecanyon.xml \
 output.edm4hep.root | tee eicrecon_out.dat
 

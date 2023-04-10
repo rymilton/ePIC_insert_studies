@@ -15,8 +15,8 @@ root -l -b -q "gen_particles.cxx(\
 ${num_events},\
 \"${hepmcfile}\",\
 \"${particle}\",\
-${theta_min},\
-${theta_max},\
-${phi_min},\
-${phi_max},\
+${theta},\
+${theta},\
+0,\
+360,\
 ${beam_energy})"
