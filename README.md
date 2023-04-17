@@ -13,9 +13,45 @@ Feel free to add anything you find useful/relevant for these studies. But please
  3. Can now do data generation, simulation, and analysis (see below)
 
 ## Data generation
-Due to the lack of official ePIC data in the insert region (3 < &eta; < 4), we are generating our own. This is done with `input/gen_particles.cxx`. This code generates a hepmc file of single-particles generated along the hadron beam axis (contains a rotation from the electron beam axis to hadron beam axis). Currently, only single-particle hepmc files are being generated.
+Due to the lack of official ePIC data in the insert region (3 < &eta; < 4), we are generating our own. This is done with `input/gen_particles.cxx`. This code generates a hepmc file of single-particles generated along the hadron beam axis (contains a rotation from the electron beam axis to hadron beam axis). Angles in this frame are referred to by &eta;<sup>*</sup>. Currently, only single-particle hepmc files are being generated.
 ### Scripts
 The generation can be done with `input/generate_input.sh` and `gen_and_sim_brycecanyon.sh` (latter in combination with simulation and reconstruction).
+### &eta;<sup>*</sup> to &theta;
+A handy conversion tool is found [here](https://www.star.bnl.gov/~dmitry/calc2.html). Some common conversions for these studies are listed below. &eta;<sup>*</sup> = 2.0 is directed into the ECal and the other angles are directed towards the insert. 
+
+
+<table>
+  <tr>
+    <th>&eta;<sup>*</sup> </th>
+    <td>2.0</td>
+    <td>3.0</td>
+    <td>3.1</td>
+    <td>3.2</td>
+    <td>3.3</td>
+    <td>3.4</td>
+    <td>3.5</td>
+    <td>3.6</td>
+    <td>3.7</td>
+    <td>3.8</td>
+    <td>3.9</td>
+    <td>4.0</td>
+  </tr>
+  <tr>
+    <th>&theta; (deg.) </th>
+    <td>15.415</td>
+    <td>5.700</td>
+    <td>5.159</td>
+    <td>4.668</td>
+    <td>4.225</td>
+    <td>3.823</td>
+    <td>3.459</td>
+    <td>3.130</td>
+    <td>2.833</td>
+    <td>2.563</td>
+    <td>2.319</td>
+    <td>2.099</td>
+  </tr>
+</table>
 
 ## Simulation and reconstruction
 The generated hepmc files can now be fed into `npsim` and the ePIC model to simulate the propagation of the single particles through the ePIC detector (uses Geant4).
