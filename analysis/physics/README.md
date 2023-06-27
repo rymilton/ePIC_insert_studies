@@ -2,7 +2,7 @@
 
 Djangoh generator files
 -----------------------
-<ii>Djangoh</i> events in HepMC3 format which have been passed through the [beam effects afterburner](https://eicweb.phy.anl.gov/monte_carlo/afterburner):
+[Djangoh](https://eic.github.io/software/djangoh.html) events in HepMC3 format which have been passed through the [beam effects afterburner](https://eicweb.phy.anl.gov/monte_carlo/afterburner):
 
 |Data Set| Generator | Beam Energies     | Run Information                                                                   | Link to file     |
 |:-------|:---------:|:-----------------:|:---------------------------------------------------------------------------------:|:----------------:|
